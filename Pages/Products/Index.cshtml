@@ -1,10 +1,22 @@
 ﻿@page
+<!--
 @model RoastedWebApp.Pages.Products.IndexModel
+-->
 
 @{
     ViewData["Title"] = "Index";
 }
-
+<nav class="site-header sticky-top py-1" style="background:padding-box top 150%">
+    <div class="container d-flex flex-md-row justify-content-between">
+        <a class="py-2 d-md-inline-block" href="#home" style="text-align: left;">ROASTED</a>
+        <a class="py-2 d-none d-md-inline-block" href="#coffee">Coffee</a>
+        <a class="py-2 d-none d-md-inline-block" href="#tea">Tea</a>
+        <a class="py-2 d-none d-md-inline-block" href="#coldDrinks">Cold Drinks</a>
+        <a class="py-2 d-md-inline-block" href="#order" style="text-align: right;">Cart</a>
+        <a class="py-2 d-none d-md-inline-block" href="#get_directions">Get directions</a>
+        <a class="py-2 d-none d-md-inline-block" href="#contact_us">Contact Us</a>
+    </div>
+</nav>
 <h1>Index</h1>
 
 <p>
@@ -29,26 +41,27 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Product) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Desription)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImageLink)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.Product)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Desription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ImageLink)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
