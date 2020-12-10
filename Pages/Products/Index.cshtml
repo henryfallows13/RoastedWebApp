@@ -4,64 +4,72 @@
 -->
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Menu";
 }
-<nav class="site-header sticky-top py-1" style="background:padding-box top 150%">
+<link href="product.css" rel="stylesheet">
+<nav class="site-header sticky-top py-1" style="background: padding-box top 150%; background-color: rgba(170, 127, 78, .85);-webkit-backdrop-filter: saturate(180%) blur(20px);backdrop-filter: saturate(180%) blur(20px);">
     <div class="container d-flex flex-md-row justify-content-between">
         <a class="py-2 d-md-inline-block" href="#home" style="text-align: left;">ROASTED</a>
-        <a class="py-2 d-none d-md-inline-block" href="#coffee">Coffee</a>
-        <a class="py-2 d-none d-md-inline-block" href="#tea">Tea</a>
-        <a class="py-2 d-none d-md-inline-block" href="#coldDrinks">Cold Drinks</a>
-        <a class="py-2 d-md-inline-block" href="#order" style="text-align: right;">Cart</a>
-        <a class="py-2 d-none d-md-inline-block" href="#get_directions">Get directions</a>
-        <a class="py-2 d-none d-md-inline-block" href="#contact_us">Contact Us</a>
+        <a class="py-2 d-md-inline-block" href="#get_directions">Get directions</a>
+        <a class="py-2 d-md-inline-block" href="#contact_us">Contact Us</a>
     </div>
 </nav>
-<h1>Index</h1>
+<div id="home"></div>
+    @foreach (var item in Model.Product)
+    {
+        <div class="card card-image mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden" style="background-image: url(@Html.DisplayFor(modelItem => item.ImageLink)); background-position: center; background-size: cover; height: 500px;">
+            <div class="my-3 py-3 txt_size">
+                <h2 class="display-5" style="color:black">@Html.DisplayFor(modelItem => item.Name)</h2>
+                <p class="lead" style="color:black">@Html.DisplayFor(modelItem => item.Desription)</p>
+                <a class="btn btn-outline-primary button_buy" style="color:black">@Html.DisplayFor(modelItem => item.Price)</a>
+            </div>
+        </div>
+    }
+    <!--SUBHEADER-->
+    <div id="get_directions"></div>
+    <div class="sub-header">
+        <h2 style="color:black">GET DIRECTIONS</h2>
+    </div>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Product[0].Price)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Product[0].Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Product[0].Desription)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Product[0].ImageLink)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.Product)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Price)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Desription)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ImageLink)
-                </td>
-                <td>
-                    <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                    <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+    <!--MAP-->
+    <div class="d-md-flex flex-md-equal w-100">
+        <div class="card" style="width: 100%;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7220.343021158678!2d55.27512052514956!3d25.197437935584095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f682829c85c07%3A0xa5eda9fb3c93b69d!2sThe%20Dubai%20Mall!5e0!3m2!1sen!2suk!4v1603384517493!5m2!1sen!2suk"
+                    width="fit-content"
+                    height="250px"
+                    frameborder="0"
+                    style="border:0;"
+                    allowfullscreen=""
+                    aria-hidden="false"
+                    tabindex="0">
+            </iframe>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="container py-5" id="contact_us">
+        <div class="row">
+            <div class="col-12 col-md">
+                <small class="d-block mb-3 text-muted">&copy; 2020</small>
+                <small class="d-block mb-3 text-muted">Created by UA92 Computer Science students</small>
+                <small class="d-block mb-3 text-muted">Marks Rozanskis, Kaleem Ashraf and Henry Fallows</small>
+            </div>
+            <div class="col-6 col-md">
+                <h5 style="color:black">Social networks</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a href="https://www.instagram.com" target="_blank"><img src="https://shegeeks.net/wp-content/uploads/2017/05/Instagram-Logo-e1495649127517.png" width=10% height=10%></a></li>
+                    <br>
+                    <li><a href="https://www.facebook.com" target="_blank"><img src="https://cdn.iphoneincanada.ca/wp-content/uploads/2019/03/fb-logo-1.png" width=10% height=10%></a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5 style="color:black">Resources</h5>
+                <ul class="list-unstyled text-small">
+                    <li style="color:black">tel: +971-565-5552-21</li>
+                    <br>
+                    <li style="color:black">email: a1roastedcoffe@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="main.js"></script>

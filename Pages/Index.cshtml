@@ -1,11 +1,25 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Welcome";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    <a class="nav-link text-dark" asp-area="" asp-page="/Products/Index">Products</a>
+<div id="home"></div>
+<div class="card card-image " style="
+        background-image: url(https://cdn.shopify.com/s/files/1/1756/5971/collections/BeansBanner_1200x.png?v=1529426964);
+        background-repeat:no-repeat;
+        background-size:cover;
+        background-position:center;
+        background-attachment: fixed;
+        left: 0px;
+        border-radius: 0px;">
+    <div class="col-md-5 p-lg-5 mx-auto my-5">
+        <br>
+        <br>
+        <br>
+            <a class="btn btn-outline-primary button_buy header-text" style="left: 15%; bottom:50%" asp-area="" asp-page="/Products/Index">OPEN MENU</a>
+        <br>
+        <br>
+        <br>
+    </div>
 </div>
