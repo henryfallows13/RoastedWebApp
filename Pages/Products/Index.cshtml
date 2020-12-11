@@ -14,10 +14,10 @@
 @foreach (var item in Model.Product)
 {
     <div class="card card-image mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden" style="background-image: url(@Html.DisplayFor(modelItem => item.ImageLink)); background-position: center; background-size: cover; height: 500px;">
-        <div class="my-3 py-3 txt_size">
+        <div class="my-3 py-3 txt_size" style="width:40%; position:center; left:30%">
             <h2 class="display-5" style="color:black">@Html.DisplayFor(modelItem => item.Name)</h2>
             <p class="lead" style="color:black">@Html.DisplayFor(modelItem => item.Desription)</p>
-            <a class="btn btn-outline-primary button_buy" style="color:black">@Html.DisplayFor(modelItem => item.Price)</a>
+            <a class="btn btn-outline-primary button_buy" style="color:black">@Html.DisplayFor(modelItem => item.Price) $</a>
         </div>
     </div>
 }
