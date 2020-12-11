@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, height=device-height" />
     <title>@ViewData["Title"] - Roasted</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/product.css" />
@@ -20,22 +20,84 @@
         background-color: #FFEBCC;
       }
 
-      .bd-placeholder-img-lg {
-            font-size: 3.5rem;
-      }
     </style>
-    <link href="~/product.css" rel="stylesheet">
 </head>
-<body>
+<body style="
+        background-image: url(https://cdn.shopify.com/s/files/1/1756/5971/collections/BeansBanner_1200x.png?v=1529426964);
+        background-repeat:no-repeat;
+        background-size:cover;
+        background-position:center;
+        background-attachment: fixed;
+        right: -100px;;
+        left: 0px;
+        border-radius: 0px;
+        height: 100%">
     <link href="product.css" rel="stylesheet">
-    <header>
-    </header>
+    <nav class="site-header sticky-top py-1" style="background: padding-box top 150%; background-color: rgba(170, 127, 78, .85);-webkit-backdrop-filter: saturate(180%) blur(20px);backdrop-filter: saturate(180%) blur(20px);">
+        <div class="container d-flex flex-md-row justify-content-between">
+            <a class="py-2 d-md-inline-block" href="#home" style="text-align: left;">ROASTED</a>
+            <a class="py-2 d-md-inline-block" href="#contact_us">Contact Us</a>
+        </div>
+    </nav>
+
+    <div id="home"></div>
+    <div class="card card-image " style="
+        background-image: url(https://cdn.shopify.com/s/files/1/1756/5971/collections/BeansBanner_1200x.png?v=1529426964);
+        background-repeat:no-repeat;
+        background-size:cover;
+        background-position:center;
+        background-attachment: fixed;
+        right: -100px;;
+        left: 0px;
+        border-radius: 0px;
+        height: 100%">
+        <div class="col-md-5 p-lg-5 mx-auto my-5">
+            <br>
+            <br>
+            <br>
+            <div class="header-text">
+                <br>
+                <h1 class="display-4 font-weight-normal">Roasted</h1>
+                <p class="lead font-weight-normal">A coffee shop specilising in fresh roasted and grounded coffee.</p>
+                <br>
+            </div>
+            <br>
+            <br>
+            <br>
+        </div>
+    </div>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
+    <footer class="container py-5" id="contact_us" style="background-color: rgba(170, 127, 78, .80);">
+        <div class="row">
+            <div class="col-12 col-md" style="color:black">
+                <small class="d-block mb-3">&copy; 2020</small>
+                <small class="d-block mb-3">Created by UA92 Computer Science students</small>
+                <small class="d-block mb-3">Marks Rozanskis, Kaleem Ashraf and Henry Fallows</small>
+            </div>
+            <div class="col-6 col-md">
+                <h5 style="color:black">Social networks</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a href="https://www.instagram.com" target="_blank"><img src="https://shegeeks.net/wp-content/uploads/2017/05/Instagram-Logo-e1495649127517.png" width=10% height=10%></a></li>
+                    <br>
+                    <li><a href="https://www.facebook.com" target="_blank"><img src="https://cdn.iphoneincanada.ca/wp-content/uploads/2019/03/fb-logo-1.png" width=10% height=10%></a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5 style="color:black">Resources</h5>
+                <ul class="list-unstyled text-small">
+                    <li style="color:black">tel: +971-565-5552-21</li>
+                    <br>
+                    <li style="color:black">email: a1roastedcoffe@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
 
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

@@ -1,11 +1,12 @@
-.container {
-    max-width: 960px;
-  }
-  
+
   /*
    * Custom translucent site header
    */
-  
+   @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+        }
+    }
   .site-header {
     background-color: rgba(170, 127, 78, .85);
     -webkit-backdrop-filter: saturate(180%) blur(20px);
@@ -28,12 +29,7 @@
     -ms-flex: 1;
     flex: 1;
   }
-  @media (min-width: 768px) {
-    .flex-md-equal > * {
-      -ms-flex: 1;
-      flex: 1;
-    }
-  }
+  
   
   .overflow-hidden { overflow: hidden; }
 
@@ -69,7 +65,7 @@
 
   *{
     font-family: Palatino;
-    color: lightgray;
+    color: black;
   }
 
   .txt_size{
